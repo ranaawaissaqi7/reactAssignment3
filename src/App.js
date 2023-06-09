@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import AddUniqueKey from './components/addUniqueKey/AddUniqueKey';
+import ParentComponents from './components/parentComponent/ParentComponents';
+import ResUseAbleListComponent from './components/reUseAbleListComponent/ResUseAbleListComponent';
+import RenderListName from './components/renderListName/RenderListName';
+import Task5 from './components/task5/Task5';
+import Task4 from './components/taskt4/Task4';
 
 function App() {
+  const cityName=["faisalabad","karachi","lahore","islamabad"];
+
+
+  const items = [
+    { id: 1, name: 'John', age: 25, gender: 'Male' },
+    { id: 2, name: 'Jane', age: 30, gender: 'Female' },
+    { id: 3, name: 'Alex', age: 28, gender: 'Male' },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <RenderListName/>
+    <ResUseAbleListComponent cityName={cityName}/>
+    <AddUniqueKey cityName={cityName}/>
+    <Task4 items={items}/>
+    <Task5/>
+    <ParentComponents/>
+    </>
   );
 }
 
